@@ -88,4 +88,9 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index')->with('success', true);
     }
+
+    public function pendency(Request $request, User $user){
+        $user->update($request->all());
+        return redirect()->route('users.index')->with('success',true);
+    }
 }

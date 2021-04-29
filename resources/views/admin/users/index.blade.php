@@ -6,13 +6,24 @@
         @slot('titulo', 'Usuários')
         @slot('head')
             <th>Nome</th>
+            <th>Cargo</th>
             <th></th>
         @endslot
         @slot('body')
             @foreach($users as $user)
                 <tr>
                     <td>{{ $user->name }}</td>
+                    <td>{{ $user->access }}</td>
+
                     <td class="options">
+                        @can('is_admin', $user)
+                            <form action="{{ route('users.pendency', $user->id) }}" method="post">
+                                @csrf
+                                @method('put')
+                                <input type="hidden" value='1' name='verified'>
+                                <button type="submit" class="btn btn-success "> <i class="fas fa-check"></i></button>
+                            </form>
+                        @endcan
                         @can('update', $user)
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                         @endcan

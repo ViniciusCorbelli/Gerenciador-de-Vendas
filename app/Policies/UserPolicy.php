@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function view(User $user, User $model) // show
     {
-        return ($user->id == $model->id || $user->is_admin);
+        return ($user->id == $model->id || $user->access == "Administrador");
     }
 
     /**
@@ -40,7 +40,7 @@ class UserPolicy
      */
     public function create(User $user) // create e store
     {
-        return $user->is_admin;
+        return $user->access == "Administrador";
     }
 
     /**
@@ -52,7 +52,7 @@ class UserPolicy
      */
     public function update(User $user, User $model) // edit e update
     {
-        return ($user->id == $model->id || $user->is_admin);
+        return ($user->id == $model->id || $user->access == "Administrador");
     }
 
     /**
@@ -64,11 +64,11 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        return $user->is_admin;
+        return $user->access == "Administrador";
     }
 
     public function is_admin(User $user)
     {
-        return $user->is_admin;
+        return $user->access == "Administrador";
     }
 }

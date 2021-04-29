@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/pessoas', 'PersonController@index')->name('people.index');
 //Route::post('/pessoas/criar', 'PersonController@store')->name('people.create');
@@ -23,6 +23,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function(){
     Route::resource('/users', 'UserController')
         ->names('users');
+        
+Route::put('/users/pendency/{user}', 'UserController@pendency')->name('users.pendency')->middleware('checkAdm');
 
     Route::resource('/categories', 'CategoryController')
         ->names('categories');
