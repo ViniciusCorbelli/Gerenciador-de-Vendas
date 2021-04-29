@@ -50,6 +50,22 @@
             </p>
             </a>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('products.index') }}" class="nav-link {{ Route::is('products.index') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-box"></i>
+            <p>
+              Produtos
+            </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('sells.index') }}" class="nav-link {{ Route::is('sells.index') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-money-bill-alt"></i>
+            <p>
+              Vendas
+            </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

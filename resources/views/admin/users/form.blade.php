@@ -13,11 +13,12 @@
     </div>
     @can('is_admin', 'App\User')
         <div class="col-lg-4 col-md-12 form-group">
-            <label for="is_admin" class="required">Tipo </label>
-            <select name="is_admin" id="is_admin" class="form-control select2" value="{{ old('is_admin', $user->is_admin) }}">
+            <label for="access" class="required">Tipo </label>
+            <select name="access" id="access" class="form-control select2" value="{{ old('access', $user->access) }}">
                 <option></option>
-                <option value="0">Comum</option>
-                <option value="1">Administrador</option>
+                <option value="Vendendor">Vendendor</option>
+                <option value="Gerente">Gerente</option>
+                <option value="Administrador">Administrador</option>
             </select>
         </div>
     @endcan
