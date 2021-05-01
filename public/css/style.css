@@ -1,0 +1,95 @@
+.body-class {
+  background-color: #2e3038;
+  min-height: 100vh; /*100% do tamanho da tela */
+}
+
+.title h1 {
+  padding-top: 60px;
+  color: #fec719;
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-msg {
+  color: #e9ecef;  
+  text-align: center;
+}
+
+.form-register label {
+  color: #e9ecef;   
+}
+
+.form-center {
+  margin: auto;
+  width: 80%;
+}
+
+.button-registrar {
+  margin-top: 20px;
+}
+
+.buttons {
+  background-color: #2e3038;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #fec719;
+  color: #fec719;
+}
+
+.buttons:hover {
+  background-color: #fec719;
+  color: #2e3038;
+  transition: 0.5s;
+}
+
+.link-registrar {
+  background-color: #2e3038;
+  padding: 8px;
+  color: #fec719;
+}
+
+.link-registrar:hover {
+  color: #b38d12;
+  transition: 0.5s;
+}
+
+.laptop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.laptop img {
+  max-width: 100%;
+}
+
+.buttons-login {
+  display: flex;
+}
+
+.buttons-login button{
+  margin-right: 20px;
+}
+
+@media only screen and (max-device-width: 900px) {
+  .laptop {
+      min-height: 50vh;
+  }
+
+  .navbar-brand {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+
+  .title h1 {
+      padding-top: 0px;
+      font-size: 32px;
+  }
+
+  .create-acount-img img {
+      height: 70px;
+      padding: 10px;
+  }
+}

@@ -42,6 +42,7 @@ class SellController extends Controller
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
+        $data['date'] = date('d-m-Y');
         Sell::create($data);
         return redirect()->route('sells.index')->with('success', true);
     }

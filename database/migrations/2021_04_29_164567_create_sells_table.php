@@ -21,6 +21,8 @@ class CreateSellsTable extends Migration
 
             $table->string('amount');
 
+            $table->string('date');
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

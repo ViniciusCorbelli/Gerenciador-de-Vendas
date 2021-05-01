@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/style.css')}}">
   @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
