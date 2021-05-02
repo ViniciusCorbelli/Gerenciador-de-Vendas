@@ -15,15 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('');
-
 Route::middleware('auth')->group(function () {
 
+    Route::get('/', 'HomeController@index')->name('');
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('/users', 'UserController')
         ->names('users');
-    Route::put('/users/pendency/{user}', 'UserController@pendency')->name('users.pendency')->middleware('checkAdm');
+    Route::put('/users/pendency/{user}', 'UserController@pendency')->name('users.pendency');
 
     Route::resource('/categories', 'CategoryController')
         ->names('categories');

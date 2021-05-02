@@ -17,12 +17,14 @@
 
                     <td class="options">
                         @can('is_admin', $user)
+                        @if (!$user->verified)
                             <form action="{{ route('users.pendency', $user->id) }}" method="post">
                                 @csrf
                                 @method('put')
                                 <input type="hidden" value='1' name='verified'>
                                 <button type="submit" class="btn btn-success "> <i class="fas fa-check"></i></button>
                             </form>
+                        @endif
                         @endcan
                         @can('update', $user)
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
