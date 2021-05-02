@@ -16,8 +16,8 @@ class SellController extends Controller
      */
     public function index()
     {
-        $sells = Sell::all();
-        return view('admin.sells.index', compact('sells'));
+        $sales = Sell::all();
+        return view('admin.sales.index', compact('sales'));
     }
 
     /**
@@ -29,7 +29,7 @@ class SellController extends Controller
     {
         $sell = new Sell();
         $products = Product::all();
-        return view('admin.sells.create', compact('sell', 'products'));
+        return view('admin.sales.create', compact('sell', 'products'));
     }
 
     /**
@@ -42,9 +42,9 @@ class SellController extends Controller
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $data['date'] = date('d-m-Y');
+        $data['date'] = date('d/m/Y');
         Sell::create($data);
-        return redirect()->route('sells.index')->with('success', true);
+        return redirect()->route('sales.index')->with('success', true);
     }
 
     /**
@@ -56,7 +56,7 @@ class SellController extends Controller
     public function edit(Sell $sell)
     {
         $products = Product::all();
-        return view('admin.sells.edit', compact('sell', 'products'));
+        return view('admin.sales.edit', compact('sell', 'products'));
     }
 
     /**
@@ -69,7 +69,7 @@ class SellController extends Controller
     public function update(SellRequest $request, Sell $sell)
     {
         $sell->update($request->all());
-        return redirect()->route('sells.index')->with('success', true);
+        return redirect()->route('sales.index')->with('success', true);
     }
 
     /**
@@ -81,6 +81,6 @@ class SellController extends Controller
     public function destroy(Sell $sell)
     {
         $sell->delete();
-        return redirect()->route('sells.index')->with('success', true);
+        return redirect()->route('sales.index')->with('success', true);
     }
 }

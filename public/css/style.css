@@ -1,3 +1,14 @@
+.userStatus {
+  position: absolute;
+  top: 52%;
+  left: 22%;
+  color: #C2C7D0;
+}
+
+.userStatus p {
+  font-size: 12px;
+}
+
 .body-class {
   background-color: #2e3038;
   min-height: 100vh; /*100% do tamanho da tela */

@@ -28,9 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('/categories', 'CategoryController')
         ->names('categories');
 
-    Route::resource('/sells', 'SellController')
-        ->names('sells');
+    Route::resource('/sales', 'SellController')
+        ->names('sales');
 
     Route::resource('/products', 'ProductController')
         ->names('products');
+    
+    Route::resource('/messages', 'MessageController')
+        ->names('messages');
 });

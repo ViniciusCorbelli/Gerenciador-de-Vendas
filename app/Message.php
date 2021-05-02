@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sell extends Model
+class Message extends Model
 {
-    protected $table = "sales";
     protected $guarded = [];  
 
     public function user()
@@ -14,8 +13,8 @@ class Sell extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function product()
+    public function sender()
     {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('App\User', 'sender_id');
     }
 }
