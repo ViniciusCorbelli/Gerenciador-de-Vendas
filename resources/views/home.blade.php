@@ -12,6 +12,12 @@
             $totalMoney += $sell->product->price * $sell->amount;
         }
     }
+
+    foreach ($clients as $client) {
+        if (date("d", strtotime($client->date)) == date("m")) {
+            $totalClients++;
+        }
+    }
     @endphp
     <div class="container">
         <div class="row justify-content-center">
@@ -34,8 +40,8 @@
                                     <div class="icon">
                                         <i class="fas fa-shopping-cart"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">
-                                        Mais informações <i class="fas fa-arrow-circle-right"></i>
+                                    <a href="{{ route('sales.index') }}" class="small-box-footer">
+                                        Veja as vendas <i class="fas fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -48,8 +54,8 @@
                                     <div class="icon">
                                         <i class="fas fa-money-bill-wave-alt"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">
-                                        Mais informações <i class="fas fa-arrow-circle-right"></i>
+                                    <a href="{{ route('sales.index') }}" class="small-box-footer">
+                                        Veja as vendas <i class="fas fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -62,8 +68,8 @@
                                     <div class="icon">
                                         <i class="fas fa-user-plus"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">
-                                        Mais informações <i class="fas fa-arrow-circle-right"></i>
+                                    <a href="{{ route('clients.index') }}" class="small-box-footer">
+                                        Veja os clientes <i class="fas fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
                             </div>

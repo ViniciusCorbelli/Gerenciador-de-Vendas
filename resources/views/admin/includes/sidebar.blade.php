@@ -14,7 +14,7 @@
             <div class="info">
                 <a href="" class="d-block">{{ Auth::user()->name }}</a>
             </div>
-            <<div class="info align-self-center">
+            <div class="info align-self-center">
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="nav-icon fas fa-power-off"></i>
@@ -47,6 +47,15 @@
                     <i class="nav-icon fas fa-user"></i>
                     <p>
                         Usuários
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item has-treeview">
+                <a href="{{ route('clients.index') }}"
+                    class="nav-link {{ Route::is('clients.index') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        Clientes
                     </p>
                 </a>
             </li>

@@ -36,4 +36,7 @@ Route::middleware('auth')->group(function () {
     
     Route::resource('/messages', 'MessageController')
         ->names('messages');
+    
+    Route::resource('/clients', 'ClientsController')
+        ->names('clients');
 });
